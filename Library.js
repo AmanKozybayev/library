@@ -19,11 +19,7 @@ class Book {
       //create a method that will remove certain book from list of books
     removeBook(_title){
       //v dushe ne ebu kak eto sdelat' za odin shag ** vrode prishla ideya, no postoyannaya putanica v golove
-      let c = _title;
-      for (let j=0;j<this.library.length;j++){
-          if (this.library[j].title===c){
-
-          }
+     
       }
       }
       //searching book by its title
@@ -32,10 +28,10 @@ class Book {
       let b=_title;
       for (let i=0; i<this.library.length;i++){
         if (this.library[i].title===b){
-        console.log(this.library[i]._title);
+        console.log(this.library[i].title);
         break
         }
-        else if (i!=this.library.length-1 && b!=this.library[i]._title){
+        else if (i!=this.library.length-1 && b!=this.library[i].title){
           console.log('searching...');
           }
           else {
@@ -47,4 +43,6 @@ class Book {
     }
   let myLib = new Library();
   myLib.addBook('Harry Potter','joeanne rowling',1997);
+  console.log(myLib);
+
   
