@@ -52,10 +52,49 @@ class Book {
         }
       
       }
+     //zdes' budet tak: chelovek vvodit imya knigi i emy vydaetsya spisok knig kotorie est' v library 
+    getBooks(){
+      let c = [];
+      if (this.library.length!=0){
+        for (let i=0;i<this.library.length;i++){
+          c.push(this.library[i].title);
+        }
+      console.log(c);
+      }//ya ne ponyal kak etu fignyu sdelat' cherez map()
+      else {
+        console.log('There is no any book in this list yet')
+      }
+    }
+    getBooksCount(){
+      if (this.library.length!=0){
+        console.log(this.library.length);
+      }
+      else {
+        console.log('There is no books here yet')
+      }
+    }
+
   }//kak zhe dostali eti skobki ska
 
   let myLib = new Library();
-  myLib.addBook('Harry Potter','joeanne rowling',1997);
-  console.log(myLib);
+  myLib.addBook("Harry Potter","Joeanne Rowling",1997);
+  myLib.addBook("LOTR","Tolkien",1953);
+  myLib.getBooks();
+  myLib.removeBook("Harry Potter");
+  myLib.getBooks();
+  myLib.removeBook("LOTR");
+  myLib.getBooks();
+  myLib.getBooksCount();
+  myLib.addBook('LOTR','Tolkien',1954);
+  myLib.addBook('Nomad','Yesenberlin',1969);
+  myLib.getBooksCount();
+  
+
+
+
+
+
+
+  
 
   
