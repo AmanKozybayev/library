@@ -77,18 +77,50 @@ class Book {
   }//kak zhe dostali eti skobki ska
 
   let myLib = new Library();
-  myLib.addBook("Harry Potter","Joeanne Rowling",1997);
-  myLib.addBook("LOTR","Tolkien",1953);
-  myLib.getBooks();
-  myLib.removeBook("Harry Potter");
-  myLib.getBooks();
-  myLib.removeBook("LOTR");
-  myLib.getBooks();
-  myLib.getBooksCount();
-  myLib.addBook('LOTR','Tolkien',1954);
-  myLib.addBook('Nomad','Yesenberlin',1969);
-  myLib.getBooksCount();
   
+const readline = require("readline");
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Which do you want to do next? => 1.add book , 2. remove book, 3. find Book 4.exit =>", function(a) {
+   if (a==="1") {
+     rl.question('Please enter name of the book: ', function(b){
+       
+       rl.question('Please enter author`s name: ', function(c){
+         
+         rl.question('Please enter publiced date: ', function(d){
+          myLib.addBook(b,c,d);
+          return;
+         })
+       })
+     })
+     
+     console.log(myLib[0]);
+
+    }
+   else if (a==='2'){
+     console.log('Ty vybral dvoiku');
+   }
+   else if (a==='3'){
+     console.log('Ty vybral troiku');
+   }
+   else if (a==='4'){
+     rl.close();
+   }
+  
+  rl.question("vvedite vtoroe chislo ", function(b) { 
+    
+    rl.close();
+  });
+});
+
+rl.on("close", function() {
+  console.log("\nBYE BYE !!!");
+  process.exit(0);
+});
+
 
 
 
